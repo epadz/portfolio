@@ -1,0 +1,476 @@
+@charset "UTF-8";
+.App {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  background-color: #F1F0EA;
+  display: flex;
+  width: 100vw;
+  height: 100vh; }
+  .App .sideBar {
+    flex: 0 0 350px;
+    height: 100vh;
+    background-color: #444545;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative; }
+    .App .sideBar .profileImage {
+      width: 200px;
+      height: 200px;
+      border-radius: 150px;
+      margin: 30px auto;
+      background-image: url("./assets/me1.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover; }
+      @media all and (max-width: 2000px) {
+        .App .sideBar .profileImage {
+          width: 170px;
+          height: 170px;
+          border-radius: 150px;
+          margin: 20px auto 10px auto; } }
+    .App .sideBar .title {
+      width: 100%;
+      color: #F1F0EA;
+      font-family: "Roboto Slab", serif;
+      text-align: center;
+      font-size: 45px;
+      line-height: 50px;
+      height: 100px; }
+      @media all and (max-width: 2000px) {
+        .App .sideBar .title {
+          font-size: 30px;
+          line-height: 34px;
+          height: 34px; } }
+    .App .sideBar .separator {
+      width: 100px;
+      margin: 20px auto;
+      height: 5px;
+      background-color: #51A3A3; }
+      @media all and (max-width: 2000px) {
+        .App .sideBar .separator {
+          margin: 10px auto; } }
+    .App .sideBar .social {
+      width: 100%;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      left: 0;
+      bottom: 20px; }
+      @media all and (max-width: 2000px) {
+        .App .sideBar .social {
+          height: 25px; } }
+      .App .sideBar .social .socialIcon {
+        height: 35px;
+        cursor: pointer;
+        margin: 0 15px;
+        position: relative; }
+        .App .sideBar .social .socialIcon svg {
+          width: 100%;
+          height: 100%;
+          fill: #ffffff;
+          transition: fill 500ms; }
+        .App .sideBar .social .socialIcon:hover svg {
+          fill: #51A3A3; }
+      .App .sideBar .social #aboutIcon {
+        flex: 0 0 35px; }
+      .App .sideBar .social #emailIcon {
+        flex: 0 0 45px; }
+        @media all and (max-width: 2000px) {
+          .App .sideBar .social #emailIcon {
+            flex: 0 0 25px; } }
+      .App .sideBar .social #linkedInIcon {
+        flex: 0 0 35px; }
+        @media all and (max-width: 2000px) {
+          .App .sideBar .social #linkedInIcon {
+            flex: 0 0 25px; } }
+    .App .sideBar .sideLink {
+      width: calc(100% - 20px);
+      color: #F1F0EA;
+      font-family: "Roboto Slab", serif;
+      text-align: center;
+      font-size: 24px;
+      line-height: 24px;
+      height: 30px;
+      cursor: pointer;
+      transition: color 500ms; }
+    .App .sideBar .sideLink:hover {
+      color: #51A3A3; }
+    .App .sideBar .filtersContainer {
+      user-select: none;
+      width: 100%;
+      font-size: 20px;
+      font-family: "Roboto Slab", serif;
+      margin-bottom: 10px; }
+      @media all and (max-width: 2000px) {
+        .App .sideBar .filtersContainer {
+          margin-bottom: 5px; } }
+      .App .sideBar .filtersContainer .filtersTitle {
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        font-size: 26px;
+        color: #F1F0EA;
+        margin-bottom: 20px;
+        text-transform: capitalize; }
+        @media all and (max-width: 2000px) {
+          .App .sideBar .filtersContainer .filtersTitle {
+            font-size: 20px;
+            line-height: 24px;
+            height: 24px;
+            margin-bottom: 10px; } }
+      .App .sideBar .filtersContainer .filters {
+        width: 100%; }
+        .App .sideBar .filtersContainer .filters .filter {
+          display: inline-block;
+          margin: 0 8px 8px 0;
+          cursor: pointer;
+          color: #ffffff;
+          background-color: #51A3A3;
+          transition: opacity 500ms;
+          height: 30px;
+          line-height: 30px;
+          font-size: 22px;
+          padding: 5px 8px; }
+          @media all and (max-width: 2000px) {
+            .App .sideBar .filtersContainer .filters .filter {
+              font-size: 16px;
+              line-height: 20px;
+              height: 20px; } }
+          .App .sideBar .filtersContainer .filters .filter:hover {
+            font-weight: bold; }
+        .App .sideBar .filtersContainer .filters .inertFilter {
+          display: inline-block;
+          margin: 0 8px 8px 0;
+          cursor: default;
+          color: #D0CCD0;
+          background-color: #ADA8B6;
+          opacity: .4;
+          transition: opacity 500ms;
+          height: 30px;
+          line-height: 30px;
+          font-size: 22px;
+          padding: 5px 8px; }
+          @media all and (max-width: 2000px) {
+            .App .sideBar .filtersContainer .filters .inertFilter {
+              font-size: 16px;
+              line-height: 20px;
+              height: 20px; } }
+    .App .sideBar .clearFiltersButton {
+      position: absolute;
+      width: 200px;
+      height: 36px;
+      line-height: 36px;
+      font-size: 24px;
+      font-family: "Roboto Slab", serif;
+      left: 50px;
+      bottom: 20px;
+      background-color: #51A3A3;
+      color: #ffffff;
+      text-align: center;
+      cursor: pointer; }
+  .App .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column; }
+    .App .main .header {
+      flex: 0 0 50px;
+      text-align: center;
+      font-family: "Roboto Slab", serif;
+      padding-left: 20px;
+      box-sizing: border-box;
+      font-size: 40px;
+      line-height: 50px;
+      color: #444545; }
+    .App .main .content {
+      flex: 1; }
+      .App .main .content > div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-content: flex-start; }
+  .App .projectTile {
+    margin: 20px 5px;
+    float: left;
+    height: 350px;
+    flex: 0 0 500px;
+    min-width: 500px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: #444545;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    position: relative;
+    transition: opacity 500ms; }
+    @media all and (max-width: 2000px) {
+      .App .projectTile {
+        flex: 0 0 400px;
+        min-width: 400px;
+        max-width: 400px;
+        height: 300px; } }
+    @media all and (max-width: 1025px) {
+      .App .projectTile {
+        flex: 0 0 300px;
+        min-width: 300px;
+        max-width: 300px;
+        height: 200px; } }
+    .App .projectTile .awardsContainer {
+      position: absolute;
+      height: 50px;
+      width: 100%;
+      left: 0;
+      top: -10px;
+      z-index: 100; }
+      .App .projectTile .awardsContainer .awardIcon {
+        display: inline-block;
+        float: right;
+        width: 50px;
+        height: 50px;
+        margin: 0 5px;
+        background: url("./assets/medal.svg") center no-repeat;
+        background-size: cover; }
+    .App .projectTile .projectImage {
+      width: 100%;
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      border: solid 5px #444545;
+      box-sizing: border-box; }
+      .App .projectTile .projectImage .blurredImage {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        filter: blur(4px) grayscale(70%); }
+      .App .projectTile .projectImage .mainImage {
+        max-height: 80%;
+        max-width: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.25); }
+    .App .projectTile .projectDetails {
+      width: 100%;
+      flex: 0 0 50px;
+      color: #51A3A3;
+      text-align: center;
+      font-family: "Roboto Slab", serif;
+      border-top: solid 5px #51A3A3; }
+      @media all and (max-width: 1025px) {
+        .App .projectTile .projectDetails {
+          flex: 0 0 35px; } }
+      .App .projectTile .projectDetails .projectTitle {
+        font-size: 26px;
+        color: #F1F0EA;
+        line-height: 30px;
+        height: 30px;
+        width: calc(100% - 20px);
+        margin: 5px 10px 0 10px; }
+        @media all and (max-width: 2000px) {
+          .App .projectTile .projectDetails .projectTitle {
+            font-size: 20px; } }
+        @media all and (max-width: 1025px) {
+          .App .projectTile .projectDetails .projectTitle {
+            font-size: 16px;
+            line-height: 20px;
+            height: 20px; } }
+      .App .projectTile .projectDetails .projectDate {
+        width: calc(100% - 20px);
+        margin: 2px 10px 5px 10px;
+        color: #51A3A3;
+        font-size: 16px;
+        line-height: 20px;
+        height: 20px; }
+      .App .projectTile .projectDetails .attrList {
+        height: 24px;
+        width: calc(100% - 20px);
+        margin: 0 10px; }
+        .App .projectTile .projectDetails .attrList .projectAttr {
+          display: inline-block;
+          margin: 0 5px 0 0;
+          color: #F1F0EA; }
+        .App .projectTile .projectDetails .attrList .projectAttr::after {
+          content: " •";
+          color: #51A3A3; }
+        .App .projectTile .projectDetails .attrList .projectAttr:last-child::after {
+          content: ""; }
+  .App .modalContainer {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 100; }
+    .App .modalContainer .modalOverlay {
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      position: absolute;
+      cursor: pointer; }
+    .App .modalContainer .leftArrow {
+      position: fixed;
+      left: calc(50vw - 400px);
+      top: calc(10vh + 100px);
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 30px;
+      background: rgba(0, 0, 0, 0.5);
+      transition: background-color 500ms;
+      color: #F1F0EA;
+      cursor: pointer; }
+      .App .modalContainer .leftArrow:hover {
+        background-color: rgba(81, 163, 163, 0.9); }
+    .App .modalContainer .rightArrow {
+      position: fixed;
+      right: calc(50vw - 400px);
+      top: calc(10vh + 100px);
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 30px;
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: background-color 500ms;
+      color: #F1F0EA;
+      cursor: pointer; }
+      .App .modalContainer .rightArrow:hover {
+        background-color: rgba(81, 163, 163, 0.9); }
+    .App .modalContainer .modal {
+      width: 700px;
+      max-height: 80vh;
+      top: 10vh;
+      left: calc(50vw - 350px);
+      position: absolute;
+      background-color: #444545;
+      box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.5); }
+      .App .modalContainer .modal .projectImage {
+        width: 100%;
+        height: 250px;
+        position: relative;
+        overflow: hidden; }
+        .App .modalContainer .modal .projectImage .blurredImage {
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          filter: blur(5px) grayscale(70%); }
+        .App .modalContainer .modal .projectImage .mainImage {
+          max-height: 90%;
+          max-width: 90%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          position: absolute;
+          box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.25); }
+      .App .modalContainer .modal .projectDetails {
+        width: 100%;
+        min-height: 100px;
+        padding: 0 10px 10px 10px;
+        box-sizing: border-box;
+        text-align: left;
+        position: relative; }
+        .App .modalContainer .modal .projectDetails .projectTitle {
+          width: 100%;
+          height: 34px;
+          line-height: 34px;
+          font-size: 30px;
+          color: #ffffff;
+          font-weight: bold;
+          font-family: "Roboto Slab", serif;
+          margin-top: 5px; }
+        .App .modalContainer .modal .projectDetails .projectLink {
+          position: absolute;
+          right: 10px;
+          top: 5px;
+          width: 24px;
+          height: 24px;
+          cursor: pointer; }
+          .App .modalContainer .modal .projectDetails .projectLink svg {
+            width: 24px;
+            height: 24px;
+            enable-background: new 0 0 457.03 457.03;
+            fill: #F1F0EA;
+            transition: fill 500ms; }
+            .App .modalContainer .modal .projectDetails .projectLink svg:hover {
+              fill: #51A3A3; }
+        .App .modalContainer .modal .projectDetails .projectDate {
+          width: 100%;
+          height: 24px;
+          line-height: 24px;
+          font-size: 18px;
+          color: #51A3A3;
+          font-family: "Roboto Slab", serif; }
+        .App .modalContainer .modal .projectDetails .tagClouds {
+          width: 100%;
+          height: 54px;
+          margin-top: 20px; }
+          .App .modalContainer .modal .projectDetails .tagClouds .tagCould {
+            float: left;
+            margin-right: 20px;
+            height: 54px;
+            user-select: none;
+            font-family: "Roboto Slab", serif; }
+            .App .modalContainer .modal .projectDetails .tagClouds .tagCould .tagCloudTitle {
+              width: 100%;
+              height: 18px;
+              line-height: 18px;
+              font-size: 16px;
+              color: #D0CCD0; }
+            .App .modalContainer .modal .projectDetails .tagClouds .tagCould .tags {
+              width: 100%;
+              text-align: left;
+              margin-top: 6px; }
+              .App .modalContainer .modal .projectDetails .tagClouds .tagCould .tags .tag {
+                display: inline-block;
+                margin-right: 8px;
+                color: #ffffff;
+                background-color: #51A3A3;
+                font-size: 16px;
+                line-height: 20px;
+                height: 20px;
+                padding: 5px 8px; }
+        .App .modalContainer .modal .projectDetails .awards {
+          width: 100%;
+          clear: both;
+          min-height: 20px;
+          margin-top: 12px;
+          font-family: "Roboto Slab", serif; }
+          .App .modalContainer .modal .projectDetails .awards .award {
+            background: url("./assets/medal.svg") no-repeat left;
+            background-size: contain;
+            height: 20px;
+            width: 100%;
+            padding-left: 25px;
+            line-height: 20px;
+            font-size: 14px;
+            color: #F1F0EA;
+            margin-bottom: 4px; }
+        .App .modalContainer .modal .projectDetails .overview {
+          width: 100%;
+          margin-top: 10px; }
+          .App .modalContainer .modal .projectDetails .overview .overviewHeader {
+            height: 24px;
+            width: 100%;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: "Roboto Slab", serif; }
+          .App .modalContainer .modal .projectDetails .overview .overviewContent {
+            width: 100%;
+            margin-top: 8px;
+            font-size: 12px;
+            line-height: 14px;
+            color: #F1F0EA;
+            font-family: "Roboto Slab", serif; }
