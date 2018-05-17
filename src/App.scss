@@ -7,7 +7,7 @@ $lightGrey: #F1F0EA;
 $grey: #D0CCD0;
 $darkGrey: #ADA8B6;
 
-$sidebarWidth: 350px;
+$sidebarWidth: 330px;
 
 .App {
   text-align: center;
@@ -17,223 +17,187 @@ $sidebarWidth: 350px;
   width: 100vw;
   height: 100vh;
 
-  .sideBar{
+  .sideBar {
     flex: 0 0 $sidebarWidth;
     height: 100vh;
     background-color: $black;
     padding: 0 20px;
     box-sizing: border-box;
     position: relative;
+    display: flex;
+    flex-direction: column;
 
-    .profileImage{
-      width: 200px;
-      height: 200px;
-      border-radius: 150px;
-      margin: 30px auto;
-      @media all and (max-width: 2000px){
-        width: 170px;
-        height: 170px;
-        border-radius: 150px;
-        margin: 20px auto 10px auto;
-      }
-      background-image: url("./assets/me1.jpg");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-
-    .title{
+    .sideBarTop {
       width: 100%;
-      color: $lightGrey;
-      font-family: $headerFont;
-      text-align: center;
-      font-size: 45px;
-      line-height: 50px;
-      height: 100px;
-      @media all and (max-width: 2000px){
-        font-size: 30px;
-        line-height: 34px;
-        height: 34px;
-      }
-    }
-
-    .separator{
-      width: 100px;
-      margin: 20px auto;
-      @media all and (max-width: 2000px){
-        margin: 10px auto;
-      }
-      height: 5px;
-      background-color: $blue;
-    }
-
-    .social{
-      width: 100%;
-      height: 35px;
-      @media all and (max-width: 2000px){
-       height: 25px;
-      }
+      margin: 20px 0;
       display: flex;
-      justify-content: center;
-      position: absolute;
-      left: 0;
-      bottom: 20px;
-      .socialIcon{
-        height: 35px;
-        cursor: pointer;
-        margin: 0 15px;
-        position: relative;
-        svg{
-          width: 100%;
-          height: 100%;
-          fill: #ffffff;
-          transition: fill 500ms;
-        }
-        &:hover svg{
-          fill: $blue;
-        }
+      flex: 0 0 120px;
+
+      .profileImage {
+        flex: 0 0 120px;
+        background-image: url("./assets/me1.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
       }
 
-      #aboutIcon{
-        flex: 0 0 35px;
-      }
-
-      #emailIcon{
-        flex: 0 0 45px;
-        @media all and (max-width: 2000px){
-          flex: 0 0 25px;
+      .sidebarHeader{
+        flex: 1;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        .title {
+          flex: 0 0 75px;
+          margin-bottom: 5px;
+          color: $lightGrey;
+          font-family: $headerFont;
+          span{
+            width: 100%;
+            clear: both;
+            display: block;
+            text-align: center;
+            font-size: 28px;
+            line-height: 28px;
+            height: 30px;
+            margin-bottom: 5px;
+          }
+          border-bottom: solid 5px $blue;
         }
-      }
 
-      #linkedInIcon{
-        flex: 0 0 35px;
-        @media all and (max-width: 2000px){
-          flex: 0 0 25px;
+        .social {
+          flex: 0 0 40px;
+          display: flex;
+          justify-content: center;
+
+          .socialIcon {
+            height: 30px;
+            flex: 0 0 30px;
+            padding: 5px;
+            box-sizing: border-box;
+            cursor: pointer;
+            margin: 5px 10px 0 0;
+            position: relative;
+            background-color: $lightGrey;
+            transition: background-color 300ms;
+
+            svg {
+              width: 100%;
+              height: 100%;
+              fill: $black;
+            }
+            &:hover {
+              background-color: $blue;
+            }
+          }
         }
       }
     }
 
-    .sideLink{
-      width: calc(100% - 20px);
-      color: $lightGrey;
-      font-family: $headerFont;
-      text-align: center;
-      font-size: 24px;
-      line-height: 24px;
-      height: 30px;
-      cursor: pointer;
-      transition: color 500ms;
-    }
-
-    .sideLink:hover{
-      color: $blue;
-    }
-
-    .filtersContainer{
-      user-select: none;
-      width: 100%;
-      font-size: 20px;
-      font-family: $headerFont;
-      margin-bottom: 10px;
-      @media all and (max-width: 2000px){
-        margin-bottom: 5px;
+      .separator {
+        width: 100px;
+        margin: 20px auto;
+        height: 5px;
+        background-color: $blue;
       }
 
-      .filtersTitle{
-        width: 100%;
-        height: 30px;
-        line-height: 30px;
-        font-size: 26px;
+      .blurb{
+        flex: 1;
         color: $lightGrey;
-        margin-bottom: 20px;
-        text-transform: capitalize;
-        @media all and (max-width: 2000px){
-          font-size: 20px;
-          line-height: 24px;
-          height: 24px;
-          margin-bottom: 10px;
-        }
+        text-align: center;
+        font-family: $headerFont;
       }
 
-      .filters{
+      .filtersContainer {
+        user-select: none;
         width: 100%;
+        font-size: 20px;
+        font-family: $headerFont;
+        margin-bottom: 10px;
+        @media all and (max-width: 2000px) {
+          margin-bottom: 5px;
+        }
 
-        .filter{
-          display: inline-block;
-          margin: 0 8px 8px 0;
-          cursor: pointer;
-          color: #ffffff;
-          background-color: $blue;
-          transition: opacity 500ms;
+        .filtersTitle {
+          width: 100%;
           height: 30px;
           line-height: 30px;
-          font-size: 22px;
-          padding: 5px 8px;
-          @media all and (max-width: 2000px){
-            font-size: 16px;
-            line-height: 20px;
-            height: 20px;
-          }
-          &:hover{
-            font-weight: bold;
+          font-size: 26px;
+          color: $lightGrey;
+          margin-bottom: 20px;
+          text-transform: capitalize;
+          @media all and (max-width: 2000px) {
+            font-size: 20px;
+            line-height: 24px;
+            height: 24px;
+            margin-bottom: 10px;
           }
         }
 
-        .inertFilter{
-          display: inline-block;
-          margin: 0 8px 8px 0;
-          cursor: default;
-          color: $grey;
-          background-color: $darkGrey;
-          opacity: .4;
-          transition: opacity 500ms;
-          height: 30px;
-          line-height: 30px;
-          font-size: 22px;
-          padding: 5px 8px;
-          @media all and (max-width: 2000px){
-            font-size: 16px;
-            line-height: 20px;
-            height: 20px;
+        .filters {
+          width: 100%;
+
+          .filter {
+            display: inline-block;
+            margin: 0 8px 8px 0;
+            cursor: pointer;
+            color: #ffffff;
+            background-color: $blue;
+            transition: opacity 300ms;
+            height: 30px;
+            line-height: 30px;
+            font-size: 22px;
+            padding: 5px 8px;
+            @media all and (max-width: 2000px) {
+              font-size: 16px;
+              line-height: 20px;
+              height: 20px;
+            }
+            &:hover {
+              font-weight: bold;
+            }
+          }
+
+          .inertFilter {
+            display: inline-block;
+            margin: 0 8px 8px 0;
+            cursor: default;
+            color: $grey;
+            background-color: $darkGrey;
+            opacity: .4;
+            transition: opacity 300ms;
+            height: 30px;
+            line-height: 30px;
+            font-size: 22px;
+            padding: 5px 8px;
+            @media all and (max-width: 2000px) {
+              font-size: 16px;
+              line-height: 20px;
+              height: 20px;
+            }
           }
         }
       }
     }
-    .clearFiltersButton{
-      position: absolute;
-      width: 200px;
-      height: 36px;
-      line-height: 36px;
-      font-size: 24px;
-      font-family: $headerFont;
-      left: 50px;
-      bottom: 20px;
-      background-color: $blue;
-      color: #ffffff;
-      text-align: center;
-      cursor: pointer;
-    }
-  }
 
-  .main{
+  .main {
     flex: 1;
     display: flex;
     flex-direction: column;
 
-    .header{
+    .header {
       flex: 0 0 50px;
       text-align: center;
       font-family: $headerFont;
-      padding-left:20px;
+      padding-left: 20px;
       box-sizing: border-box;
       font-size: 40px;
       line-height: 50px;
       color: $black;
     }
 
-    .content{
+    .content {
       flex: 1;
-      > div{
+      > div {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
@@ -242,7 +206,7 @@ $sidebarWidth: 350px;
     }
   }
 
-  .projectTile{
+  .projectTile {
     margin: 20px 5px;
     float: left;
     height: 350px;
@@ -251,32 +215,32 @@ $sidebarWidth: 350px;
     max-width: 500px;
     display: flex;
     flex-direction: column;
-    @media all and (max-width: 2000px){
+    @media all and (max-width: 2000px) {
       flex: 0 0 400px;
       min-width: 400px;
       max-width: 400px;
       height: 300px;
     }
-    @media all and (max-width: 1025px){
+    @media all and (max-width: 1025px) {
       flex: 0 0 300px;
       min-width: 300px;
       max-width: 300px;
       height: 200px;
     }
     background-color: $black;
-    box-shadow: 0 0 4px rgba(0,0,0,.25);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .25);
     cursor: pointer;
     position: relative;
-    transition: opacity 500ms;
+    transition: opacity 300ms;
 
-    .awardsContainer{
+    .awardsContainer {
       position: absolute;
       height: 50px;
       width: 100%;
       left: 0;
       top: -10px;
       z-index: 100;
-      .awardIcon{
+      .awardIcon {
         display: inline-block;
         float: right;
         width: 50px;
@@ -287,7 +251,7 @@ $sidebarWidth: 350px;
       }
     }
 
-    .projectImage{
+    .projectImage {
       width: 100%;
       flex: 1;
       position: relative;
@@ -295,7 +259,7 @@ $sidebarWidth: 350px;
       border: solid 5px $black;
       box-sizing: border-box;
 
-      .blurredImage{
+      .blurredImage {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -307,21 +271,21 @@ $sidebarWidth: 350px;
         filter: blur(4px) grayscale(70%);
       }
 
-      .mainImage{
+      .mainImage {
         max-height: 80%;
         max-width: 80%;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         position: absolute;
-        box-shadow: 0 0 4px rgba(0,0,0,.25);
+        box-shadow: 0 0 4px rgba(0, 0, 0, .25);
       }
     }
 
-    .projectDetails{
+    .projectDetails {
       width: 100%;
       flex: 0 0 50px;
-      @media all and (max-width: 1025px){
+      @media all and (max-width: 1025px) {
         flex: 0 0 35px;
       }
       color: $blue;
@@ -329,12 +293,12 @@ $sidebarWidth: 350px;
       font-family: $headerFont;
       border-top: solid 5px $blue;
 
-      .projectTitle{
+      .projectTitle {
         font-size: 26px;
-        @media all and (max-width: 2000px){
+        @media all and (max-width: 2000px) {
           font-size: 20px;
         }
-        @media all and (max-width: 1025px){
+        @media all and (max-width: 1025px) {
           font-size: 16px;
           line-height: 20px;
           height: 20px;
@@ -346,7 +310,7 @@ $sidebarWidth: 350px;
         margin: 5px 10px 0 10px;
       }
 
-      .projectDate{
+      .projectDate {
         width: calc(100% - 20px);
         margin: 2px 10px 5px 10px;
         color: $blue;
@@ -355,28 +319,28 @@ $sidebarWidth: 350px;
         height: 20px;
       }
 
-      .attrList{
+      .attrList {
         height: 24px;
         width: calc(100% - 20px);
         margin: 0 10px;
 
-        .projectAttr{
+        .projectAttr {
           display: inline-block;
           margin: 0 5px 0 0;
           color: $lightGrey;
         }
 
-        .projectAttr::after{
+        .projectAttr::after {
           content: " •";
           color: $blue;
         }
-        .projectAttr:last-child::after{
+        .projectAttr:last-child::after {
           content: "";
         }
       }
     }
   }
-  .modalContainer{
+  .modalContainer {
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -384,17 +348,17 @@ $sidebarWidth: 350px;
     left: 0;
     z-index: 100;
 
-    .modalOverlay{
+    .modalOverlay {
       width: 100vw;
       height: 100vh;
       top: 0;
       left: 0;
-      background-color: rgba(0,0,0,.4);
+      background-color: rgba(0, 0, 0, .4);
       position: absolute;
       cursor: pointer;
     }
 
-    .leftArrow{
+    .leftArrow {
       position: fixed;
       left: calc(50vw - 400px);
       top: calc(10vh + 100px);
@@ -402,16 +366,16 @@ $sidebarWidth: 350px;
       height: 40px;
       line-height: 40px;
       font-size: 30px;
-      background: rgba(0,0,0,.5);
-      transition: background-color 500ms;
-      &:hover{
-        background-color: rgba(81,163,163,.9);
+      background: rgba(0, 0, 0, .5);
+      transition: background-color 300ms;
+      &:hover {
+        background-color: rgba(81, 163, 163, .9);
       }
       color: $lightGrey;
       cursor: pointer;
     }
 
-    .rightArrow{
+    .rightArrow {
       position: fixed;
       right: calc(50vw - 400px);
       top: calc(10vh + 100px);
@@ -419,31 +383,31 @@ $sidebarWidth: 350px;
       height: 40px;
       line-height: 40px;
       font-size: 30px;
-      background-color: rgba(0,0,0,.5);
-      transition: background-color 500ms;
-      &:hover{
-        background-color: rgba(81,163,163,.9);
+      background-color: rgba(0, 0, 0, .5);
+      transition: background-color 300ms;
+      &:hover {
+        background-color: rgba(81, 163, 163, .9);
       }
       color: $lightGrey;
       cursor: pointer;
     }
 
-    .modal{
+    .modal {
       width: 700px;
       max-height: 80vh;
       top: 10vh;
       left: calc(50vw - 350px);
       position: absolute;
       background-color: $black;
-      box-shadow: 0 0 8px 2px rgba(0,0,0,.5);
+      box-shadow: 0 0 8px 2px rgba(0, 0, 0, .5);
 
-      .projectImage{
+      .projectImage {
         width: 100%;
         height: 250px;
         position: relative;
         overflow: hidden;
 
-        .blurredImage{
+        .blurredImage {
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -455,18 +419,18 @@ $sidebarWidth: 350px;
           filter: blur(5px) grayscale(70%);
         }
 
-        .mainImage{
+        .mainImage {
           max-height: 90%;
           max-width: 90%;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
           position: absolute;
-          box-shadow: 0 0 4px 2px rgba(0,0,0,.25);
+          box-shadow: 0 0 4px 2px rgba(0, 0, 0, .25);
         }
       }
 
-      .projectDetails{
+      .projectDetails {
         width: 100%;
         min-height: 100px;
         padding: 0 10px 10px 10px;
@@ -474,7 +438,7 @@ $sidebarWidth: 350px;
         text-align: left;
         position: relative;
 
-        .projectTitle{
+        .projectTitle {
           width: 100%;
           height: 34px;
           line-height: 34px;
@@ -485,22 +449,22 @@ $sidebarWidth: 350px;
           margin-top: 5px;
         }
 
-        .projectLink{
+        .projectLink {
           position: absolute;
           right: 10px;
           top: 5px;
           width: 24px;
           height: 24px;
           cursor: pointer;
-          svg{
+          svg {
             width: 24px;
             height: 24px;
             enable-background: new 0 0 457.03 457.03;
             fill: $lightGrey;
-            &:hover{
+            &:hover {
               fill: $blue;
             }
-            transition: fill 500ms;
+            transition: fill 300ms;
           }
         }
 
@@ -513,19 +477,19 @@ $sidebarWidth: 350px;
           font-family: $headerFont;
         }
 
-        .tagClouds{
+        .tagClouds {
           width: 100%;
           height: 54px;
           margin-top: 20px;
 
-          .tagCould{
+          .tagCould {
             float: left;
             margin-right: 20px;
             height: 54px;
             user-select: none;
             font-family: $headerFont;
 
-            .tagCloudTitle{
+            .tagCloudTitle {
               width: 100%;
               height: 18px;
               line-height: 18px;
@@ -533,11 +497,11 @@ $sidebarWidth: 350px;
               color: $grey;
             }
 
-            .tags{
+            .tags {
               width: 100%;
               text-align: left;
               margin-top: 6px;
-              .tag{
+              .tag {
                 display: inline-block;
                 margin-right: 8px;
                 color: #ffffff;
@@ -551,14 +515,14 @@ $sidebarWidth: 350px;
           }
         }
 
-        .awards{
+        .awards {
           width: 100%;
           clear: both;
           min-height: 20px;
           margin-top: 12px;
           font-family: $headerFont;
 
-          .award{
+          .award {
             background: url("./assets/medal.svg") no-repeat left;
             background-size: contain;
             height: 20px;
@@ -571,10 +535,10 @@ $sidebarWidth: 350px;
           }
         }
 
-        .overview{
+        .overview {
           width: 100%;
           margin-top: 10px;
-          .overviewHeader{
+          .overviewHeader {
             height: 24px;
             width: 100%;
             color: #ffffff;
@@ -583,7 +547,7 @@ $sidebarWidth: 350px;
             font-family: $headerFont;
           }
 
-          .overviewContent{
+          .overviewContent {
             width: 100%;
             margin-top: 8px;
             font-size: 12px;

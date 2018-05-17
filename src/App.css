@@ -7,95 +7,75 @@
   width: 100vw;
   height: 100vh; }
   .App .sideBar {
-    flex: 0 0 350px;
+    flex: 0 0 330px;
     height: 100vh;
     background-color: #444545;
     padding: 0 20px;
     box-sizing: border-box;
-    position: relative; }
-    .App .sideBar .profileImage {
-      width: 200px;
-      height: 200px;
-      border-radius: 150px;
-      margin: 30px auto;
-      background-image: url("./assets/me1.jpg");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover; }
-      @media all and (max-width: 2000px) {
-        .App .sideBar .profileImage {
-          width: 170px;
-          height: 170px;
-          border-radius: 150px;
-          margin: 20px auto 10px auto; } }
-    .App .sideBar .title {
+    position: relative;
+    display: flex;
+    flex-direction: column; }
+    .App .sideBar .sideBarTop {
       width: 100%;
-      color: #F1F0EA;
-      font-family: "Roboto Slab", serif;
-      text-align: center;
-      font-size: 45px;
-      line-height: 50px;
-      height: 100px; }
-      @media all and (max-width: 2000px) {
-        .App .sideBar .title {
-          font-size: 30px;
-          line-height: 34px;
-          height: 34px; } }
+      margin: 20px 0;
+      display: flex;
+      flex: 0 0 120px; }
+      .App .sideBar .sideBarTop .profileImage {
+        flex: 0 0 120px;
+        background-image: url("./assets/me1.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; }
+      .App .sideBar .sideBarTop .sidebarHeader {
+        flex: 1;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column; }
+        .App .sideBar .sideBarTop .sidebarHeader .title {
+          flex: 0 0 75px;
+          margin-bottom: 5px;
+          color: #F1F0EA;
+          font-family: "Roboto Slab", serif;
+          border-bottom: solid 5px #51A3A3; }
+          .App .sideBar .sideBarTop .sidebarHeader .title span {
+            width: 100%;
+            clear: both;
+            display: block;
+            text-align: center;
+            font-size: 28px;
+            line-height: 28px;
+            height: 30px;
+            margin-bottom: 5px; }
+        .App .sideBar .sideBarTop .sidebarHeader .social {
+          flex: 0 0 40px;
+          display: flex;
+          justify-content: center; }
+          .App .sideBar .sideBarTop .sidebarHeader .social .socialIcon {
+            height: 30px;
+            flex: 0 0 30px;
+            padding: 5px;
+            box-sizing: border-box;
+            cursor: pointer;
+            margin: 5px 10px 0 0;
+            position: relative;
+            background-color: #F1F0EA;
+            transition: background-color 300ms; }
+            .App .sideBar .sideBarTop .sidebarHeader .social .socialIcon svg {
+              width: 100%;
+              height: 100%;
+              fill: #444545; }
+            .App .sideBar .sideBarTop .sidebarHeader .social .socialIcon:hover {
+              background-color: #51A3A3; }
     .App .sideBar .separator {
       width: 100px;
       margin: 20px auto;
       height: 5px;
       background-color: #51A3A3; }
-      @media all and (max-width: 2000px) {
-        .App .sideBar .separator {
-          margin: 10px auto; } }
-    .App .sideBar .social {
-      width: 100%;
-      height: 35px;
-      display: flex;
-      justify-content: center;
-      position: absolute;
-      left: 0;
-      bottom: 20px; }
-      @media all and (max-width: 2000px) {
-        .App .sideBar .social {
-          height: 25px; } }
-      .App .sideBar .social .socialIcon {
-        height: 35px;
-        cursor: pointer;
-        margin: 0 15px;
-        position: relative; }
-        .App .sideBar .social .socialIcon svg {
-          width: 100%;
-          height: 100%;
-          fill: #ffffff;
-          transition: fill 500ms; }
-        .App .sideBar .social .socialIcon:hover svg {
-          fill: #51A3A3; }
-      .App .sideBar .social #aboutIcon {
-        flex: 0 0 35px; }
-      .App .sideBar .social #emailIcon {
-        flex: 0 0 45px; }
-        @media all and (max-width: 2000px) {
-          .App .sideBar .social #emailIcon {
-            flex: 0 0 25px; } }
-      .App .sideBar .social #linkedInIcon {
-        flex: 0 0 35px; }
-        @media all and (max-width: 2000px) {
-          .App .sideBar .social #linkedInIcon {
-            flex: 0 0 25px; } }
-    .App .sideBar .sideLink {
-      width: calc(100% - 20px);
+    .App .sideBar .blurb {
+      flex: 1;
       color: #F1F0EA;
-      font-family: "Roboto Slab", serif;
       text-align: center;
-      font-size: 24px;
-      line-height: 24px;
-      height: 30px;
-      cursor: pointer;
-      transition: color 500ms; }
-    .App .sideBar .sideLink:hover {
-      color: #51A3A3; }
+      font-family: "Roboto Slab", serif; }
     .App .sideBar .filtersContainer {
       user-select: none;
       width: 100%;
@@ -127,7 +107,7 @@
           cursor: pointer;
           color: #ffffff;
           background-color: #51A3A3;
-          transition: opacity 500ms;
+          transition: opacity 300ms;
           height: 30px;
           line-height: 30px;
           font-size: 22px;
@@ -146,7 +126,7 @@
           color: #D0CCD0;
           background-color: #ADA8B6;
           opacity: .4;
-          transition: opacity 500ms;
+          transition: opacity 300ms;
           height: 30px;
           line-height: 30px;
           font-size: 22px;
@@ -156,19 +136,6 @@
               font-size: 16px;
               line-height: 20px;
               height: 20px; } }
-    .App .sideBar .clearFiltersButton {
-      position: absolute;
-      width: 200px;
-      height: 36px;
-      line-height: 36px;
-      font-size: 24px;
-      font-family: "Roboto Slab", serif;
-      left: 50px;
-      bottom: 20px;
-      background-color: #51A3A3;
-      color: #ffffff;
-      text-align: center;
-      cursor: pointer; }
   .App .main {
     flex: 1;
     display: flex;
@@ -202,7 +169,7 @@
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     position: relative;
-    transition: opacity 500ms; }
+    transition: opacity 300ms; }
     @media all and (max-width: 2000px) {
       .App .projectTile {
         flex: 0 0 400px;
@@ -324,7 +291,7 @@
       line-height: 40px;
       font-size: 30px;
       background: rgba(0, 0, 0, 0.5);
-      transition: background-color 500ms;
+      transition: background-color 300ms;
       color: #F1F0EA;
       cursor: pointer; }
       .App .modalContainer .leftArrow:hover {
@@ -338,7 +305,7 @@
       line-height: 40px;
       font-size: 30px;
       background-color: rgba(0, 0, 0, 0.5);
-      transition: background-color 500ms;
+      transition: background-color 300ms;
       color: #F1F0EA;
       cursor: pointer; }
       .App .modalContainer .rightArrow:hover {
@@ -402,7 +369,7 @@
             height: 24px;
             enable-background: new 0 0 457.03 457.03;
             fill: #F1F0EA;
-            transition: fill 500ms; }
+            transition: fill 300ms; }
             .App .modalContainer .modal .projectDetails .projectLink svg:hover {
               fill: #51A3A3; }
         .App .modalContainer .modal .projectDetails .projectDate {

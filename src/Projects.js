@@ -1,4 +1,4 @@
-import nationalParks from './assets/nationalParksFinder.png';
+﻿import nationalParks from './assets/nationalParksFinder.png';
 import accentio from './assets/accentio.png';
 import apartmentPromo from './assets/apartmentPromo.png';
 import bikeFinder from './assets/bikeFinder.png';
@@ -22,15 +22,17 @@ import whispers from './assets/whispers.png';
 
 
 export const tags = {
+  ALL: 'all',
   WEB: 'web',
-  MOBILE: 'mobile',
-  HARDWARE: 'hardware',
   DATA: 'data',
   DESIGN: 'design',
+  MOBILE: 'mobile',
+  HARDWARE: 'hardware',
   OTHER: 'other',
 };
 
 export const technologies = {
+  ANY: 'any',
   REACT: 'react',
   D3: 'D3',
   NOSQL: 'noSQL',
@@ -64,7 +66,7 @@ export default [
     date: 'May, 2018',
     awards: ['Voted Best Design'],
     link: 'https://epadz.github.io/NationalParks',
-    overview: 'Find Your National Park is a group project I did for a masters-level data visualization class my senior year of college. Our goal was to create a web app to help users explore national parks with a special emphasis placed on species biodiversity. Users can explore individual parks and learn about their weather, visitation trends and the species that reside there. Likewise, they can search for specific plants and animals to get recommendations for which parks to visit. Overall, our objective was to inspire users to go out and explore this amazing resources we have in America, especially as National Parks are evermore threatened by climate change and limited governmental support. I did the user interface, search functionality and app infrastructure (the other group members were responsible for compiling and preparing the data and building the charts, graphs and maps).',
+    overview: 'Find Your National Park is a group project I worked on for a masters-level data visualization class my senior year of college. Our goal was to create a web app to help users explore national parks with a special emphasis placed on species biodiversity. Users can explore individual parks and learn about their weather, visitation trends and the species that reside there. Likewise, they can search for specific plants and animals to get recommendations for which parks to visit. Overall, our objective was to inspire users to go out and explore this amazing resources we have in America, especially as National Parks are evermore threatened by climate change and limited governmental support. I did the user interface, search functionality and app infrastructure (the other group members were responsible for compiling and preparing the data and building the charts, graphs and maps).',
   }, {
     title: "Accent.io",
     image: accentio,
@@ -149,7 +151,7 @@ export default [
     technologies: [technologies.GIS],
     date: 'December, 2017',
     overview: 'This is a project I did for a GIS course I took my senior year of college. I wanted to explore how socioeconomic factors and access to nutrition related to health trends in Chicago. I had to acquire data from a variety of sources and use ArcMap to query it to gain insights and create maps to display the data in a clear, intuitive way. Ultimately, I was able to confirm my hypothesis that living in a low income or predominantly black or Latino area correlates with decreased access to supermarkets and that both of these factors correlate with poorer health and decreased lifespan.',
-    link: './gisPaper.pdf',
+    link: 'https://drive.google.com/file/d/1YYZP7ojD4vxcL0zitbzdkGTsxGckRr7D/view?usp=sharing',
   }, {
     title: "Free Apartment Promotion",
     image: apartmentPromo,
